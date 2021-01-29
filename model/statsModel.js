@@ -1,15 +1,18 @@
 const mongoose = require('mongoose');
 
-const mailSchema = new mongoose.Schema({
+const statsSchema = new mongoose.Schema({
     email: {
         type: [String],
         required: [true, 'aaa']
     },
-    // },
-    // successful: [String],
+    failed : {
+        type: [String]
+    },
 
-    // failed : [String],
-
+    successful: {
+        type: [String]
+    },
+    
     subject: {
         type: String,
         required: [true, 'A subject is a must']
@@ -27,6 +30,6 @@ const mailSchema = new mongoose.Schema({
     
 });
 
-const Mail = mongoose.model('Mail', mailSchema);
+const Stats = mongoose.model('Stats', statsSchema);
 
-module.exports = Mail;
+module.exports = Stats;
