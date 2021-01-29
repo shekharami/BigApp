@@ -14,17 +14,12 @@ exports.sendPersonalisedEmail = async (req, res, next) => {
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-    function createMsgObject (to, from, subject, text){
-        return { to, from, subject, text }
-    }
-
-    await email.map( async p => {
+    email.map( async p => {
         try{
-            await sgMail.send(createMsgObject(p, from, req.body.subject, req.body.mailText ))
+            await sgMail.send({ to: p, from, subject: req.body.subject, text: req.body.mailText })
             sent += `${p},`
 
         }catch(err){
-
             failed.push(p)
         }
     });
@@ -34,7 +29,7 @@ exports.sendPersonalisedEmail = async (req, res, next) => {
 
     const doc = await stats.create( { email: req.body.email, failed, successful, subject: req.body.subject , mailText: req.body.mailText})
 
-    console.log(doc)
+    // console.log(doc)
 
     res.status(201).json({
         data: doc
