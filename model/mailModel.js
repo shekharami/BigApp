@@ -1,8 +1,5 @@
-// const crypto = require('crypto');
 const mongoose = require('mongoose');
-// const { doc } = require('prettier');
-// const validator = require('validator');
-// const bcrypt = require('bcrypt');
+
 
 
 const mailSchema = new mongoose.Schema({

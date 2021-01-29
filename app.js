@@ -11,13 +11,6 @@ app.use(express.static(`${__dirname}/public`));
 
 app.use(express.json()); 
 
-// app.use(cookieParser());
-
 app.use('/api/mail', mailRouter);
-
-// app.all('*', (req, res, next) => {
-//     res.send("Route has not been defined")
-//     next()
-// });
 
 module.exports = app;
