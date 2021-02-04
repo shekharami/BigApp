@@ -35,11 +35,11 @@ emailId must be a mongoDb ObjectId (Applicable to all the routes defined onwards
     Must be used after using /sendMail/:emailId route for a particular emailId.
     Also for getting tye stats, the user should enable the Event Webhook of SendGrid. For this:
 
-    ..1. Go to (https://app.sendgrid.com/settings/mail_settings)
-    ..2. Edit Event Webhook under Event Setting section
-    ..3. Provide the http POST URL as {Base URL}/api/mail/sgEventNotification
-    ..4. Events to be POSTed to your URL: Checkboxes to be checked (Dropped, Defferred, Bounced, delivered)
-    ..5. Click on 'Save'
+    1. Go to (https://app.sendgrid.com/settings/mail_settings)
+    2. Edit Event Webhook under Event Setting section
+    3. Provide the http POST URL as {Base URL}/api/mail/sgEventNotification
+    4. Events to be POSTed to your URL: Checkboxes to be checked (Dropped, Defferred, Bounced, delivered)
+    5. Click on 'Save'
 
     If you are running this App on localhost: Please download *** ngrok *** and run it. (It exposes your server running on localhost to the web)
 
