@@ -5,11 +5,7 @@ const mailSchema = new mongoose.Schema({
         type: [String],
         required: [true, 'aaa']
     },
-    // },
-    // successful: [String],
-
-    // failed : [String],
-
+  
     subject: {
         type: String,
         required: [true, 'A subject is a must']

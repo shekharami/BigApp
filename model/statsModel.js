@@ -1,32 +1,20 @@
 const mongoose = require('mongoose');
 
 const statsSchema = new mongoose.Schema({
-    email: {
-        type: [String],
-        required: [true, 'aaa']
-    },
-    failed : {
-        type: [String]
+    email: String,
+
+    custom_mail_id: String,
+
+    event : String,
+
+    reason : {
+        type: String,
+        default : null
     },
 
-    successful: {
-        type: [String]
-    },
+    sg_msg_id: String,
     
-    subject: {
-        type: String,
-        required: [true, 'A subject is a must']
-    },
-
-    mailText: {
-        type: String,
-        required: [true,'Email should have a body']
-    },
-
-    timestamp: {
-        type: Date,
-        default: Date.now()
-    }
+    timestamp: Date
     
 });
 
